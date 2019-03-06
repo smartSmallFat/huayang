@@ -1,0 +1,57 @@
+/**
+ * Created by ASUS on 2018/12/5.
+ */
+var express=require('express');
+var loversController=require('./../controller/loversController.js');
+//定义的模块
+var myRouter=express.Router();
+//二级页面的渲染
+myRouter.route('/showfamilyPage').get(loversController.showfamilyPage);
+myRouter.route('/showfriendPage').get(loversController.showfriendPage);
+myRouter.route('/showLoversPage').get(loversController.showLoversPage);
+myRouter.route('/showLoversDali').get(loversController.showLoversDali);
+myRouter.route('/showLoversSH').get(loversController.showLoversSH);
+myRouter.route('/showLoversLJ').get(loversController.showLoversLJ);
+myRouter.route('/showLoversQD').get(loversController.showLoversQD);
+myRouter.route('/showLoversBJ').get(loversController.showLoversBJ);
+myRouter.route('/showLoversSY').get(loversController.showLoversSY);
+myRouter.route('/showfriendDali').get(loversController.showfriendDali);
+myRouter.route('/showfriendSH').get(loversController.showfriendSH);
+myRouter.route('/showfriendLJ').get(loversController.showfriendLJ);
+myRouter.route('/showfriendQD').get(loversController.showfriendQD);
+myRouter.route('/showfriendBJ').get(loversController.showfriendBJ);
+myRouter.route('/showfriendSY').get(loversController.showfriendSY);
+myRouter.route('/showfamilyDali').get(loversController.showfamilyDali);
+myRouter.route('/showfamilySH').get(loversController.showfamilySH);
+myRouter.route('/showfamilyLJ').get(loversController.showfamilyLJ);
+myRouter.route('/showfamilyQD').get(loversController.showfamilyQD);
+myRouter.route('/showfamilyBJ').get(loversController.showfamilyBJ);
+myRouter.route('/showfamilySY').get(loversController.showfamilySY);
+//三级页面的渲染
+myRouter.route('/showLoversDet').get(loversController.showLoversDet);
+myRouter.route('/showfriend_CD_Det').get(loversController.showfriend_CD_Det);
+myRouter.route('/showfriend_DL_Det').get(loversController.showfriend_DL_Det);
+myRouter.route('/showfriend_SH_Det').get(loversController.showfriend_SH_Det);
+myRouter.route('/showfriend_LJ_Det').get(loversController.showfriend_LJ_Det);
+myRouter.route('/showfriend_QD_Det').get(loversController.showfriend_QD_Det);
+myRouter.route('/showLoversDetails').get(loversController.showLoversDetails);
+myRouter.route('/showLoversbiBPGDetails').get(loversController.showLoversbiBPGDetails);
+myRouter.route('/showLoversbiDALIDetails').get(loversController.showLoversbiDALIDetails);
+myRouter.route('/showLoversbiDALI1Details').get(loversController.showLoversbiDALI1Details);
+myRouter.route('/showLoversbiDALI2Details').get(loversController.showLoversbiDALI2Details);
+myRouter.route('/showLoversbixiamenDetails').get(loversController.showLoversbixiamenDetails);
+myRouter.route('/showLoversbixiamen1Details').get(loversController.showLoversbixiamen1Details);
+myRouter.route('/showLoversbixiamen2Details').get(loversController.showLoversbixiamen2Details);
+myRouter.route('/showLoversbiLGDetails').get(loversController.showLoversbiLGDetails);
+myRouter.route('/showLoversbiLG1Details').get(loversController.showLoversbiLG1Details);
+myRouter.route('/showLoversbiLG2Details').get(loversController.showLoversbiLG2Details);
+myRouter.route('/submitloverOrder').get(loversController.submitloverOrder);
+myRouter.route('/loadloverDetails').get(loversController.loadloverDetails);
+//家庭照三级页面路由
+myRouter.route('/showfamily_CD_Det').get(loversController.showfamily_CD_Det);
+myRouter.route('/showfamily_DL_Det').get(loversController.showfamily_DL_Det);
+myRouter.route('/showfamily_SH_Det').get(loversController.showfamily_SH_Det);
+myRouter.route('/showfamily_LJ_Det').get(loversController.showfamily_LJ_Det);
+myRouter.route('/showfamily_QD_Det').get(loversController.showfamily_QD_Det);
+//导出模块
+module.exports=myRouter;

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/personal1.css" />
+    <script src="../dist/jquery-3.3.1.js"></script>
+
+</head>
+
+<div id="box">
+<!--导航-->
+<div id="nav">
+    <!--两行文字-->
+    <div class="div1">
+    <p style="position: absolute;color: #eeeeee;font-size: 26px">花漾旅拍</p>
+    <p style="color: #eeeeee;position: absolute;margin-top: 37px;margin-left: 10px">HUAYANG</p>
+    </div>
+    <div class="phone">
+        <img src="../image/lpkp/phone.png" alt="">
+    <p>
+        18881206860
+    </p>
+    </div>
+    <!--几个li-->
+    <div class="div2">
+    <ul>
+        <li>首页</li>
+        <li>最新客片</li>
+        <li>婚纱推荐</li>
+        <li>旅拍定制</li>
+    </ul>
+
+    </div>
+</div>
+
+    <!--banner图-->
+<div class="div3">
+    <img src="../image/lpkp/baner.jpg" >
+</div>
+ <!--下面的背景-->
+<div class="bj">
+    <!--侧边栏-->
+<div class="l-div">
+    <div class="headimg">
+        <img src="../image/lpkp/3.jpg"></div>
+
+    <div class="msg">
+    <p>基本资料</p>
+    <ul class="change">
+        <li id="cmsg">修改资料</li>
+        <li id="cpass">修改密码</li>
+        <li id="chead">修改头像</li>
+    </ul>
+    </div>
+    <div class="Order">
+        <p>我的订单</p>
+        <p class="p2">订单详情</p>
+    </div>
+<div class="history">
+<p>历史记录</p>
+</div>
+</div>
+    <div id="M">
+        <!--状态-->
+            <div class="state clearfix">
+                <span class="waitForConsumeBtn">待消费</span>
+                <span class="waitForCommentBtn">待评价</span>
+            </div>
+            <!--待消费套餐信息-->
+            <div class="mealInfo clearfix" data-index="">
+
+            </div>
+            <!--待评价套餐信息-->
+            <div class="waitForComment clearfix" data-index="">
+        </div>
+        <!--评价-->
+        <div class="addComment clearfix">
+            <div class="comment-head clearfix">
+                <p class="comment">评价</p>
+                <p class="return">返回</p>
+            </div>
+            <div  class="commentDescription clearfix">
+                <textarea class="wordDescription" type="text" placeholder="请说说您对本次旅拍的想法吧！"></textarea>
+            </div>
+            <div class="addImgBox clearfix">
+                <input type="file" class="addImgBtn" name="files" multiple>
+                <div>+<span>添加图片</span></div>
+            </div>
+            <div class="canvas clearfix">
+                <img src="" alt="" class="commentImg1">
+                <img src="" alt="" class="commentImg2">
+                <img src="" alt="" class="commentImg3">
+            </div>
+            <input type="button" value="提交" class="submit" data-index="">
+        </div>
+
+    </div>
+    <div id="r-div-msg">
+
+        <!--订单详情-->
+
+        <!--资料修改-->
+        <div class="changemsg" >
+            <p>个人资料</p>
+            <hr>
+            <div class="name">
+                <p>姓名:</p>
+                <input type="text">
+                <div class="d1">*</div>
+            </div>
+        </div>
+        <!--手机号-->
+        <div class="myphone">
+            <p>手机号:</p>
+            <input type="text">
+            <div class="d2">*</div>
+        </div>
+        <!--性别-->
+        <div class="sex">
+            <p>性别:</p>
+            <select  id="sl1">
+                <option value="">男</option>
+                <option value="">女</option>
+            </select>
+            <div class="d3">*</div>
+        </div>
+        <!--所在地区-->
+        <div class="local">
+            <p>所在地区:</p>
+            <select name="province" id="province">
+                <option value="1">四川</option>
+                <option value="2">云南</option>
+                <option value="3">重庆</option>
+                <option value="4">浙江</option>
+                <option value="5">海南</option>
+            </select>
+            <select name="city" id="city">
+            </select>
+        </div>
+        <!--个性签名-->
+        <div class="pw">
+            <p>个性签名:</p>
+            <textarea  id="t1" cols="30" rows="10"></textarea>
+        </div>
+        <button id="save" style="background:#00dfc0;margin-left:373px;margin-top: -20px;cursor:pointer;border-radius:3px;color:snow;width: 100px;height: 20px;border: none">确认修改</button>
+        <!--提示框-->
+        <div class="tips">
+            <div class="tip1">
+                <b><p>!</p></b>
+                <p style="margin-top: 10px">注明</p>
+            </div>
+            <div class="tip2" >
+                <p>1.请填写您个人真实信息，一经设置不可修改;</p>
+                <p>2.带有'*'的将作为联系您的重要依据，如信息不真实将不能正常为您服务.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--密码修改-->
+<div id="r-div-pass">
+    <div class="hed">
+    <p>修改密码</p>
+    <hr>
+    </div>
+    <div class="writephone">
+        <p>手机号:</p>
+        <input type="text">
+        <input type="button" class="btn" value="获取验证码" onclick="settime(this)">
+    </div>
+    <div class="writetest">
+        <p>验证码:</p>
+        <input type="text">
+
+    </div>
+    <div class="testpass">
+        <p>新密码:</p>
+        <input type="text">
+    </div>
+    <button class="save">保存</button>
+
+</div>
+
+    <!--头像修改-->
+    <div id="ch" >
+        <p>头像修改</p>
+        <hr>
+        <div class="sctp">
+        <div class="smbox"></div>
+        <button>上传图片
+            <input type="file"  class="yc">
+        </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script>
+
+    // 对应省市
+    $.ajax({
+        url: '/personal1',
+        success: function (err) {
+            if (err) {
+                $('#province').append('<option></option>')
+            } else {
+                $('#province').append('<option></option>')
+            }
+
+        }
+    });
+    $('#province').on('change',function () {
+        var arr1=['成都','雅安','绵阳','乐山','内江'];
+        var arr2=['昆明','丽江','大理','普洱','昭通','玉溪'];
+        var arr3=['渝中','沙坪坝','万州','北碚区','江北区'];
+        var arr4=['绍兴','温州','徐州','台州','金华'];
+        var arr5=['海口','三亚'];
+
+        var a=parseInt($(this).val());
+        //console.log(typeof a);
+        switch (a){
+            case 1:
+                $('#city').text('');
+                for(var i=0;i<arr1.length;i++){
+                    $('#city').append('<option value="">'+arr1[i]+'</option>')
+                }
+                break;
+            case 2:
+                $('#city').text('');
+                for(var i=0;i<arr2.length;i++){
+                    $('#city').append('<option value="">'+arr2[i]+'</option>')
+                }
+                break;
+            case 3:
+                $('#city').text('');
+                for(var i=0;i<arr3.length;i++){
+                    $('#city').append('<option value="">'+arr3[i]+'</option>')
+                }
+                break;
+            case 4:
+                $('#city').text('');
+                for(var i=0;i<arr4.length;i++){
+                    $('#city').append('<option value="">'+arr4[i]+'</option>')
+                }
+                break;
+            case 5:
+                $('#city').text('');
+                for(var i=0;i<arr5.length;i++){
+                    $('#city').append('<option value="">'+arr5[i]+'</option>')
+                }
+        }
+    });
+    var arry=['成都','雅安','绵阳','乐山','内江'];
+    var a=parseInt($('#province').val());;
+    //console.log(typeof a);
+    switch (a){
+        case 1:
+            for(var i=0;i<arry.length;i++){
+                $('#city').append('<option value="">'+arry[i]+'</option>')
+            }
+    }
+
+    // 点击修改不同信息
+    var oCmsg=document.getElementById('cmsg');
+    var oCpass=document.getElementById('cpass');
+    var oRdiv=document.getElementById('r-div-msg');
+    var oDiv2=document.getElementById('r-div-pass');
+    var oChead=document.getElementById('chead');
+    var oCh=document.getElementById('ch');
+
+    //点击订单详情
+    $('.Order .p2').click(function () {
+        oRdiv.style.display='none';
+        oDiv2.style.display='none';
+        oCh.style.display='none';
+        $('#M').css({display:'block'});
+        waitForConsume(1);
+    });
+
+    oCmsg.onclick=function () {
+        oRdiv.style.display='block';
+        oDiv2.style.display='none';
+        oCh.style.display='none';
+    };
+    oCpass.onclick=function () {
+        oRdiv.style.display='none';
+        oDiv2.style.display='block';
+        oCh.style.display='none'
+    };
+    oChead.onclick=function () {
+        oRdiv.style.display='none';
+        oDiv2.style.display='none';
+        oCh.style.display='block'
+    };
+
+
+
+// 倒计时
+    var countdown=60;
+    function settime(val) {
+        if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value="免费获取验证码";
+            countdown = 60;
+        } else {
+            val.setAttribute("disabled", true);
+            val.value="重新发送(" + countdown + ")";
+            countdown--;
+            setTimeout(function() {
+                settime(val)
+            },1000)
+        }
+    }
+
+
+
+    //点击待消费按钮
+    $('.waitForConsumeBtn').click(function () {
+        $('.waitForConsumeBtn').css('color','red');//待消费按钮变红
+        $('.waitForCommentBtn').css('color','#263a3a');//待评价按钮变黑
+        $('.state').css('display','inner');//整个状态框显示
+        $('.mealInfo').css('display','block');//待消费整个页面显示
+        $('.waitForComment').css('display','none');//待评价整个页面隐藏
+        $('.mealInfo').html('');//清空待消费整个页面
+        waitForConsume(1);
+    });
+    //点击待评价按钮
+    $('.waitForCommentBtn').click(function () {
+        $('.waitForConsumeBtn').css('color','#263a3a');
+        $('.waitForCommentBtn').css('color','red');
+        $('.state').css('display','inner');
+        $('.waitForComment').css('display','block');
+        $('.mealInfo').css('display','none');
+        waitForComment();
+    });
+    //点击评价
+    $('.waitForComment').on('click','input',function () {
+        $('.state').css('display','none');
+        $('.waitForComment').css('display','none');
+        $('.addComment ').css('display','block');
+        //评价按钮的data-index
+        var index=$(this).attr('data-index');//o_id
+        var index2=$(this).attr('data-mId');
+        //确定提交的data-index
+        $('.submit').attr('data-index',index);
+        $('.submit').attr('data-mId',index2);
+    })
+    //评价页面点击返回
+    $('.return').click(function () {
+        $('.addComment').css('display','none');
+        $('.state').css('display','block');
+        $('.waitForComment').css('display','block');
+    });
+    //评价页面点击提交
+    $('.submit').click(function () {
+        $(".commentImg1").attr("src",'');
+        $(".commentImg2").attr("src",'');
+        $(".commentImg3").attr("src",'');
+        $('.addComment').css('display','none');
+        $('.state').css('display','block');
+        $('.waitForComment').css('display','block');
+        var str=$('.wordDescription').val();
+        $('.wordDescription').val('');
+        var index=$('.submit').attr('data-index');//o_id
+        var index2=$('.submit').attr('data-mId');//m_id
+        var oDate=new Date();
+        var year=oDate.getFullYear();
+        var month=oDate.getMonth();
+        var day=oDate.getDate();
+        if(day<10){
+            day='0'+day;
+        };
+        if(month+1<10){
+            month='0'+(month+1);
+        };
+        var date=year+'-'+month+'-'+day;
+        var formData=new FormData();
+        var arr=$('.addImgBtn')[0].files;
+        for(var i=0;i<arr.length;i++){
+            formData.append('files',arr[i]);
+        }
+        var img1=$('.addImgBtn')[0].files[0].name;
+        var img2=$('.addImgBtn')[0].files[1].name;
+        var img3=$('.addImgBtn')[0].files[2].name;
+        addComment(str,date,index,1,index2,img1,img2,img3);
+        refreshComment(index);
+        $.ajax({
+            url:'/upload',
+            data:formData,
+            type:'post',
+            contentType:false,
+            processData:false,
+            success:function (res) {
+            }
+        });
+    });
+    //添加评论函数
+    function addComment(str,date,index,uId,index2,img1,img2,img3) {
+        $.ajax({
+            url:'/addComment',
+            data:{word:str,date:date,oId:index,uId:uId,mId:index2,img1:img1,img2:img2,img3:img3},
+            success:function (res) {
+            }
+        });
+    };
+    //获取待消费数据函数
+    function waitForConsume(userId) {
+        $.ajax({
+            url:'/waitForConsume',
+            data:{userId:userId},
+            success:function (res){
+                for(var i=0 ; i<res.data.length;i++){
+                    var date=res.data[i].o_orderDate.toString().slice(0,-14);
+                    $('.mealInfo').prepend(`<div class="parent clearfix" data-index="${res.data[i].o_id}">
+                <img src="${res.data[i].m_imageUrl}" alt="" ><!--class="mealInfoImg"-->
+                        <div class="mealInfoWord">
+                        <p class="mealName">套餐名 :${res.data[i].m_title}</p>
+                        <p class="place">拍摄地 :${res.data[i].m_place}</p>
+                        <p class="orderName">订单号 :${res.data[i].o_id}</p>
+                        <p class="orderTime">下单时间 :${date}</p>
+                        <input type="button" value="我已消费" class="mealUsed" data-index="${res.data[i].o_id}" data-mId="${res.data[i].m_id}">
+                        </div>
+                        </div>`)
+                refreshConsume();
+            }
+                }
+        })
+        }
+    };
+
+
+//点击我已消费刷新待消费列表函数
+function refreshConsume() {
+    $('.mealUsed').click(function () {
+        $('.mealInfo').html('');
+        $('.mealInfo').css('display','none');
+        $('.waitForComment').css('display','block');
+        $('.waitForCommentBtn').css('color','red');
+        $('.waitForConsumeBtn').css('color','#263a3a');
+        var oId=parseInt($(this).attr('data-index'));
+        $.ajax({
+            url:'/refreshConsume',
+            data:{oId:oId},
+            success:function (res) {
+                waitForComment();
+            }
+        })
+    })
+};
+//刷新待消费列表函数
+function refreshComment(oId) {
+    $.ajax({
+        url:'/refreshComment',
+        data:{oId:oId},
+        success:function (res) {
+            waitForComment();
+        }
+    })
+};
+//获取待消费数据函数
+function waitForComment() {
+    $('.waitForComment').html('');
+    $.ajax({
+        url:'/waitForComment',
+        data:{uId:1},
+        success:function (res) {
+            for(var i=0;i<res.data.length;i++){
+                var date=res.data[i].o_orderDate.toString().slice(0,-14);
+                $('.waitForComment').append(`<div class="parent clearfix">
+                        <img src="${res.data[i].m_imageUrl}" alt="" ><!--${res.data[i].imageUrl}-->
+                        <div class="waitForComment-mealInfoWord">
+                        <p class="waitForComment-mealName">套餐名 :${res.data[i].m_title}</p>
+                        <p class="waitForComment_mealPlace">拍摄地 :${res.data[i].m_place}</p>
+                        <p class="waitForComment-orderName">订单号 :${res.data[i].o_id}</p>
+                        <p class="waitForComment-orderTime">下单时间 :${date}</p>
+                        <input type="button" value="评价" class="mealComment" data-index="${res.data[i].o_id}" data-mId="${res.data[i].m_id}">
+                        </div>
+                        </div>`)
+            }
+        }
+    });
+};
+
+//点击文件按钮，选择的图片出现在页面
+$(".addImgBtn").change(function(){
+    $(".commentImg1").attr("src",URL.createObjectURL($(this)[0].files[0]));
+    $(".commentImg2").attr("src",URL.createObjectURL($(this)[0].files[1]));
+    $(".commentImg3").attr("src",URL.createObjectURL($(this)[0].files[2]));
+});
+
+
+
+
+
+</script>
+
+</html>
